@@ -1,1 +1,30 @@
-Clay Backend Test Case by Richard CorkeIntroductionI haven't ever used C# before, but I like a challenge and I believe that you learn most when you have a deadline! I'll try to explain my thought process and programming as best I can about this test case. I wasn't really sure what the security protocol would be between the backend and the confirmation tag, so I left part of it empty. I tried to be modular with my code, but, like I said, it's my first C# project. My main experience is with C - I haven’t had so much experience with object oriented languages (aside from a bit of playing around with PHP and python), so please go easy on me!TechnologiesI research a bit into what would be a suitable framework (obviously checking out your tech stack), and I believed that using ASP.NET Core with Razor pages as opposed to an MVC model would be best for me in the short time frame I have to do this – most seemed to agree that while it isn’t quite as neat, it is a bit easier to pick up for a newbie. For a database, I decided to use SQLite.PlanningI decided to keep a basic format of email and password for each user. Due to the nature of the application, it would not be necessary for users to register – rather an admin should add users as and when required. This meant a slight variation but still incorporating CRUD functionality. I didn’t know how the security confirmation would work, so I decided to keep it simple and assume that once a user has been approved by an admin, they have access to unlock both doors.ApplicationThe application, on being deployed, seeds data into the database and checks if the admin user exists - if not, it creates it:Admin login: admin@clay.nlPassword: P455w0rd!The app requires authorization for every page except for login - meaning outside users can only access the login page. Once logged in, users can open both doors, access their personal account data, edit their details, download their personal data. I should add that this was using a scaffolded Identity layout from Microsoft, due to time constraints.The admin can also view and remove all users, as well as being able to add users.Part of this project was created using Microsoft asp.net identity, which I modified to suit my needs. This meant that, as opposed to writing everything from scratch, I was able to focus more time on learning and understanding the technologies.If I would have had more time, I would have added more functionality, and perhaps a second app just for the admin to add and edit users. I also would have taken some consideration into deployment (maybe with a dockerfile). However, I generally run under the principle that it's better to have something working than something too ambitious and unfinished!I'd love to hear feedback and tips - I’m sure there’s plenty I could improve on!Richard
+Clay Backend Test Case by Richard Corke
+
+Introduction
+I haven't ever used C# before, but I like a challenge and I believe that you learn most when you have a deadline! I'll try to explain my thought process and programming as best I can about this test case. I wasn't really sure what the security protocol would be between the backend and the confirmation tag, so I left part of it empty. I tried to be modular with my code, but, like I said, it's my first C# project. My main experience is with C - I haven√ït had so much experience with object oriented languages (aside from a bit of playing around with PHP and python), so please go easy on me!
+
+Technologies
+I research a bit into what would be a suitable framework (obviously checking out your tech stack), and I believed that using ASP.NET Core with Razor pages as opposed to an MVC model would be best for me in the short time frame I have to do this √ê most seemed to agree that while it isn√ït quite as neat, it is a bit easier to pick up for a newbie. For a database, I decided to use SQLite.
+
+Planning
+I decided to keep a basic format of email and password for each user. Due to the nature of the application, it would not be necessary for users to register √ê rather an admin should add users as and when required. This meant a slight variation but still incorporating CRUD functionality. I didn√ït know how the security confirmation would work, so I decided to keep it simple and assume that once a user has been approved by an admin, they have access to unlock both doors.
+
+Application
+The application, on being deployed, seeds data into the database and checks if the admin user exists - if not, it creates it:
+
+Admin login: admin@clay.nl
+Password: P455w0rd!
+
+The app requires authorization for every page except for login - meaning outside users can only access the login page. 
+
+Once logged in, users can open both doors, access their personal account data, edit their details, download their personal data. I should add that this was using a scaffolded Identity layout from Microsoft, due to time constraints.
+
+The admin can also view and remove all users, as well as being able to add users.
+
+Part of this project was created using Microsoft asp.net identity, which I modified to suit my needs. This meant that, as opposed to writing everything from scratch, I was able to focus more time on learning and understanding the technologies.
+
+If I would have had more time, I would have added more functionality, and perhaps a second app just for the admin to add and edit users. I also would have taken some consideration into deployment (maybe with a dockerfile). However, I generally run under the principle that it's better to have something working than something too ambitious and unfinished!
+
+I'd love to hear feedback and tips - I'm sure there's plenty I could improve on!
+
+Richard
