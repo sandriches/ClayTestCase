@@ -1,0 +1,26 @@
+﻿@page
+@model ViewModel
+@{
+    ViewData["Title"] = "View Users";
+
+}
+<!--List all users and offer remove button option-->
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+    <ul>
+        @foreach(var item in Model.get_users())
+        {
+            <li>
+                @item
+                <form method="post" asp-page-handler="Remove_User">
+                <button value=@item name="name">Remove</button>
+                    </form>
+                <br />
+                </li>
+        }
+        </ul>
+                </section>
+    </div>
+</div>

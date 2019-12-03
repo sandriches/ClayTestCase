@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!--Index displays links to unlock doors and, for the admin, to add/view/remove users-->
+
+<div class="text-center">
+    <h1 class="display-4"><a class="nav-link text-dark" asp-area="" asp-page="/Door_1">Open Door 1</a></h1>
+</div>
+<div class="text-center">
+    <h1 class="display-4"><a class="nav-link text-dark" asp-area="" asp-page="/Door_2">Open Door 2</a></h1>
+</div>
+@if (Model.User.Identity.Name == "admin@clay.nl")
+{
+<div class="text-center">
+    <h2 class="display-4"><a class="nav-link text-dark" asp-area="" asp-page="/Create">Add User</a></h2>
+</div>
+<div class="text-center">
+    <h2 class="display-4"><a class="nav-link text-dark" asp-area="" asp-page="/View">View Users</a></h2>
+</div>
+}
